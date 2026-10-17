@@ -10,6 +10,7 @@ requires-python = ">=3.13"
 dependencies = [
     "bokeh>=3.10.1",
     "catboost>=1.2.10",
+    "fastparquet>=2026.9.0",
     "ipykernel>=7.4.0",
     "ipywidgets>=8.1.9",
     "jupyter>=1.1.1",
@@ -18,16 +19,10 @@ dependencies = [
     "numpy>=2.5.4",
     "pandas>=3.0.6",
     "plotly>=7.1.0",
+    "pyarrow>=26.0.0",
     "scikit-learn>=1.9.1",
     "scipy>=1.18.1",
     "seaborn>=0.13.2",
     "tqdm>=4.70.1",
     "xgboost>=3.4.1",
 ]
-
-[project.scripts]
-school1514-ai = "school1514_ai:main"
-
-[build-system]
-requires = ["uv_build>=0.13.0,<0.14.0"]
-build-backend = "uv_build"
