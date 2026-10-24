@@ -1,0 +1,332 @@
+[
+  {
+    "id": "first-line",
+    "title": "Первый график: температура за неделю",
+    "kind": "plot",
+    "code": "import matplotlib.pyplot as plt\n\ndays = [1, 2, 3, 4, 5, 6, 7]\ntemperature = [15, 17, 16, 20, 19, 18, 21]\nplt.plot(days, temperature)\nplt.show()",
+    "code_sha256": "0414d7997f2219b091bc7d7e575a6c337d1ad3f2e83628e699da52633b395e56",
+    "pdf": "img/first-line.pdf",
+    "png": "img/first-line.png",
+    "result_text": ""
+  },
+  {
+    "id": "labels",
+    "title": "Добавляем смысл: оси, заголовок и точки",
+    "kind": "plot",
+    "code": "plt.plot(days, temperature, marker=\"o\")\nplt.xlabel(\"День\")\nplt.ylabel(\"Температура, °C\")\nplt.title(\"Температура за неделю\")\nplt.show()",
+    "code_sha256": "743d8be8030209ee8967fd3d5761a58611b992a420ef6e2f78fe8fe077983320",
+    "pdf": "img/labels.pdf",
+    "png": "img/labels.png",
+    "result_text": ""
+  },
+  {
+    "id": "two-lines",
+    "title": "Два города на одном рисунке",
+    "kind": "plot",
+    "code": "kazan = [13, 14, 17, 18, 16, 19, 20]\nplt.plot(days, temperature,\n         label=\"Москва\")\nplt.plot(days, kazan, label=\"Казань\")\nplt.xlabel(\"День\")\nplt.ylabel(\"Температура, °C\")\nplt.legend()\nplt.show()",
+    "code_sha256": "77757b6d8e0685eb9e0346bbc36a29fa160439e08dafa44d1dca10e7b5ee5b56",
+    "pdf": "img/two-lines.pdf",
+    "png": "img/two-lines.png",
+    "result_text": ""
+  },
+  {
+    "id": "function",
+    "title": "График математической функции",
+    "kind": "plot",
+    "code": "import numpy as np\n\nx = np.linspace(-2, 2, 100)\nplt.plot(x, x ** 2)\nplt.xlabel(\"x\")\nplt.ylabel(\"y = x²\")\nplt.grid(True)\nplt.show()",
+    "code_sha256": "4e06f6dbcb678edcb065d05f3c24d70a5f4de8b86279b3f5d3d1be37d58a18ad",
+    "pdf": "img/function.pdf",
+    "png": "img/function.png",
+    "result_text": ""
+  },
+  {
+    "id": "bike-scatter",
+    "title": "Scatter: расстояние и время поездки",
+    "kind": "plot",
+    "code": "distance = [2, 4, 6, 8, 10, 12]\nminutes = [10, 18, 22, 35, 38, 48]\nplt.scatter(distance, minutes)\nplt.xlabel(\"Расстояние, км\")\nplt.ylabel(\"Время, мин\")\nplt.show()",
+    "code_sha256": "c70e7f47a6dd3457cc3820d677ee8a4d5094b60cf4df275db1c07b068155c3aa",
+    "pdf": "img/bike-scatter.pdf",
+    "png": "img/bike-scatter.png",
+    "result_text": ""
+  },
+  {
+    "id": "cafe-bar",
+    "title": "Bar: сравниваем продажи напитков",
+    "kind": "plot",
+    "code": "drinks = [\"Чай\", \"Кофе\", \"Какао\"]\ncups = [18, 32, 12]\nplt.bar(drinks, cups)\nplt.xlabel(\"Напиток\")\nplt.ylabel(\"Продано порций\")\nplt.show()",
+    "code_sha256": "ee90dfca85ab176ae883621fd0145aae085f2650b719c6caa7940bf5a72bfdb4",
+    "pdf": "img/cafe-bar.pdf",
+    "png": "img/cafe-bar.png",
+    "result_text": ""
+  },
+  {
+    "id": "wind-hist",
+    "title": "Hist: как распределена скорость ветра",
+    "kind": "plot",
+    "code": "wind = [1, 3, 2, 5, 4, 2, 6,\n        3, 1, 4, 7, 5, 2, 3]\nplt.hist(wind, bins=[0, 2, 4, 6, 8],\n         edgecolor=\"white\")\nplt.xlabel(\"Скорость ветра, м/с\")\nplt.ylabel(\"Число измерений\")\nplt.show()",
+    "code_sha256": "320aa3363817921b0868c299a7110fa4d6f41489832cf94e59bf6df573bec181",
+    "pdf": "img/wind-hist.pdf",
+    "png": "img/wind-hist.png",
+    "result_text": ""
+  },
+  {
+    "id": "create-table",
+    "title": "Создадим таблицу небольшого магазина",
+    "kind": "table",
+    "code": "import pandas as pd\n\ntable = pd.DataFrame({\n    \"item\": [\"Тетрадь\", \"Блокнот\",\n             \"Ручка\", \"Карандаш\"],\n    \"category\": [\"Бумага\", \"Бумага\",\n                 \"Письмо\", \"Письмо\"],\n    \"price\": [80, 120, 30, 20],\n    \"sold\": [10, 5, 20, 15],\n})\ntable",
+    "code_sha256": "aa4345385d1945c50df3b3c7893df41f7a1913a2f726ebc95c36da8636326e02",
+    "pdf": "img/create-table.pdf",
+    "png": "img/create-table.png",
+    "result_text": "       item category  price  sold\n0   Тетрадь   Бумага     80    10\n1   Блокнот   Бумага    120     5\n2     Ручка   Письмо     30    20\n3  Карандаш   Письмо     20    15"
+  },
+  {
+    "id": "shape",
+    "title": "Размер таблицы и названия столбцов",
+    "kind": "text",
+    "code": "print(table.shape)\nprint(len(table))\nprint(table.columns.tolist())",
+    "code_sha256": "92534c5def6859f639b7f8126ac58051dd1496ef068474eab93e3a286df9a13a",
+    "pdf": "img/shape.pdf",
+    "png": "img/shape.png",
+    "result_text": "(4, 4)\n4\n['item', 'category', 'price', 'sold']"
+  },
+  {
+    "id": "series",
+    "title": "Выбираем один столбец",
+    "kind": "table",
+    "code": "prices = table[\"price\"]\nprices",
+    "code_sha256": "0967fa65ff3fd6de61332756aee5153146aa075083c3c9e42fdad2dd49fc9239",
+    "pdf": "img/series.pdf",
+    "png": "img/series.png",
+    "result_text": "   price\n0     80\n1    120\n2     30\n3     20"
+  },
+  {
+    "id": "statistics",
+    "title": "Вычисляем по столбцу",
+    "kind": "text",
+    "code": "print(\"Средняя цена:\", prices.mean())\nprint(\"Минимум:\", prices.min())\nprint(\"Максимум:\", prices.max())\nprint(\"Всего продано:\",\n      table[\"sold\"].sum())",
+    "code_sha256": "0436bc2ed25c125ad5b28fc6ab02cf6e3370d804bb003ad48152200f3bb9a397",
+    "pdf": "img/statistics.pdf",
+    "png": "img/statistics.png",
+    "result_text": "Средняя цена: 62.5\nМинимум: 20\nМаксимум: 120\nВсего продано: 50"
+  },
+  {
+    "id": "columns",
+    "title": "Выбираем несколько столбцов",
+    "kind": "table",
+    "code": "table[[\"item\", \"sold\"]]",
+    "code_sha256": "074c414b3c841a8c54d917e8b014502f308bba6414814101a4d6c3543c05ae31",
+    "pdf": "img/columns.pdf",
+    "png": "img/columns.png",
+    "result_text": "       item  sold\n0   Тетрадь    10\n1   Блокнот     5\n2     Ручка    20\n3  Карандаш    15"
+  },
+  {
+    "id": "mask",
+    "title": "Условие сначала даёт ответы True или False",
+    "kind": "table",
+    "code": "mask = table[\"price\"] >= 80\nmask",
+    "code_sha256": "2594e0139952b78e14f46c4e29c90bbcdc3b37b719d9d79cdbb4d20475facbd8",
+    "pdf": "img/mask.pdf",
+    "png": "img/mask.png",
+    "result_text": "   price\n0   True\n1   True\n2  False\n3  False"
+  },
+  {
+    "id": "filter",
+    "title": "Используем маску для отбора строк",
+    "kind": "table",
+    "code": "expensive = table[mask]\nexpensive",
+    "code_sha256": "9f3caf5a84996d1edc6ac32167c93412bd33b60432bf481cfa906c5073c126a1",
+    "pdf": "img/filter.pdf",
+    "png": "img/filter.png",
+    "result_text": "      item category  price  sold\n0  Тетрадь   Бумага     80    10\n1  Блокнот   Бумага    120     5"
+  },
+  {
+    "id": "two-conditions",
+    "title": "Два условия одновременно",
+    "kind": "table",
+    "code": "mask = ((table[\"category\"] == \"Письмо\")\n        & (table[\"sold\"] >= 18))\ntable[mask]",
+    "code_sha256": "18a885185d5b57195d4314c0b9d39e2e27240fa21cfe673b10027fab009aef53",
+    "pdf": "img/two-conditions.pdf",
+    "png": "img/two-conditions.png",
+    "result_text": "    item category  price  sold\n2  Ручка   Письмо     30    20"
+  },
+  {
+    "id": "sort",
+    "title": "Упорядочим товары по продажам",
+    "kind": "table",
+    "code": "popular = table.sort_values(\n    \"sold\", ascending=False\n)\npopular",
+    "code_sha256": "a930da95817725e86963cd7ee74e70046aa2df5c56373efde1d0ffeca91ff0fb",
+    "pdf": "img/sort.pdf",
+    "png": "img/sort.png",
+    "result_text": "       item category  price  sold\n2     Ручка   Письмо     30    20\n3  Карандаш   Письмо     20    15\n0   Тетрадь   Бумага     80    10\n1   Блокнот   Бумага    120     5"
+  },
+  {
+    "id": "revenue",
+    "title": "Новый столбец: выручка по каждому товару",
+    "kind": "table",
+    "code": "table[\"revenue\"] = (\n    table[\"price\"] * table[\"sold\"]\n)\ntable[[\"item\", \"revenue\"]]",
+    "code_sha256": "d85e2b1802dd7b0a5bcb8ea07423a5c3bbde83df46c60f59ad0dc55fa5c5ca71",
+    "pdf": "img/revenue.pdf",
+    "png": "img/revenue.png",
+    "result_text": "       item  revenue\n0   Тетрадь      800\n1   Блокнот      600\n2     Ручка      600\n3  Карандаш      300"
+  },
+  {
+    "id": "groupby",
+    "title": "Groupby: отдельная сумма для каждой категории",
+    "kind": "table",
+    "code": "groups = table.groupby(\"category\")\nrevenue_by_category = (\n    groups[\"revenue\"].sum()\n)\nrevenue_by_category",
+    "code_sha256": "b1777935ded2d9a159f7d9ad88e5fdc36b3ec1e5bd4c30aaceb0701c477b923a",
+    "pdf": "img/groupby.pdf",
+    "png": "img/groupby.png",
+    "result_text": "          revenue\ncategory         \nБумага       1400\nПисьмо        900"
+  },
+  {
+    "id": "group-bar",
+    "title": "Покажем готовую сводку на графике",
+    "kind": "plot",
+    "code": "plt.bar(revenue_by_category.index,\n        revenue_by_category.values)\nplt.xlabel(\"Категория\")\nplt.ylabel(\"Выручка, руб.\")\nplt.show()",
+    "code_sha256": "82cc4aef2e31b5d98d995f1385b9b236b5083c87ee558be0764bbd3284f71a4c",
+    "pdf": "img/group-bar.pdf",
+    "png": "img/group-bar.png",
+    "result_text": ""
+  },
+  {
+    "id": "read-csv",
+    "title": "Загрузим файл и посмотрим начало",
+    "kind": "table",
+    "code": "raw = pd.read_csv(DATA / \"rides.csv\")\nraw.head(4)",
+    "code_sha256": "9199bee7aed1abf6ba80fd229323a52b0174a33bc238d827bb799123483d9ad4",
+    "pdf": "img/read-csv.pdf",
+    "png": "img/read-csv.png",
+    "result_text": "   trip_id       bike  distance_km  minutes\n0        1  Городской         14.0     58.9\n1        2     Горный         15.8     78.8\n2        3  Шоссейный         23.1     72.1\n3        4  Городской         23.3     98.5"
+  },
+  {
+    "id": "missing",
+    "title": "Размер и неизвестные значения",
+    "kind": "text",
+    "code": "print(\"Размер:\", raw.shape)\nprint(\"Пропуски:\")\nprint(raw.isna().sum())",
+    "code_sha256": "4d20ee7ec67b5d5ea673425a06e5b76222ad32b02b7ed4ed35e298ce6aa2f243",
+    "pdf": "img/missing.pdf",
+    "png": "img/missing.png",
+    "result_text": "Размер: (61, 4)\nПропуски:\ntrip_id        0\nbike           0\ndistance_km    2\nminutes        3\ndtype: int64"
+  },
+  {
+    "id": "clean",
+    "title": "Удалим технический повтор и подготовим пары",
+    "kind": "text",
+    "code": "clean = raw.drop_duplicates().copy()\ntrips = clean.dropna(\n    subset=[\"distance_km\", \"minutes\"]\n)\nprint(\"Без повторов:\", len(clean))\nprint(\"Полных пар:\", len(trips))",
+    "code_sha256": "dd7df53f9d5f35c1cd2acd962339b986763f0a2a9019b18419d33c92c514be4c",
+    "pdf": "img/clean.pdf",
+    "png": "img/clean.png",
+    "result_text": "Без повторов: 60\nПолных пар: 55"
+  },
+  {
+    "id": "trips-mpl",
+    "title": "Столбцы вместо списков в Matplotlib",
+    "kind": "plot",
+    "code": "plt.scatter(trips[\"distance_km\"],\n            trips[\"minutes\"], alpha=0.7)\nplt.xlabel(\"Расстояние, км\")\nplt.ylabel(\"Время, мин\")\nplt.show()",
+    "code_sha256": "c1a00748ac260834f6f48f02ea61e2d89c8be5751e1534577779f1a81cbd2f2c",
+    "pdf": "img/trips-mpl.pdf",
+    "png": "img/trips-mpl.png",
+    "result_text": ""
+  },
+  {
+    "id": "sns-scatter",
+    "title": "Тот же график через Seaborn",
+    "kind": "plot",
+    "code": "import seaborn as sns\n\nsns.scatterplot(data=trips,\n    x=\"distance_km\", y=\"minutes\")\nplt.xlabel(\"Расстояние, км\")\nplt.ylabel(\"Время, мин\")\nplt.show()",
+    "code_sha256": "7cb8e0e0427b29358add4c3dfb74852e0d5a8de9811475e5c26acfd7239556d7",
+    "pdf": "img/sns-scatter.pdf",
+    "png": "img/sns-scatter.png",
+    "result_text": ""
+  },
+  {
+    "id": "sns-hue",
+    "title": "Цвет показывает тип велосипеда",
+    "kind": "plot",
+    "code": "sns.scatterplot(data=trips,\n    x=\"distance_km\", y=\"minutes\",\n    hue=\"bike\")\nplt.xlabel(\"Расстояние, км\")\nplt.ylabel(\"Время, мин\")\nplt.legend(title=\"Велосипед\", fontsize=8)\nplt.show()",
+    "code_sha256": "6e4bae2d69da2d5a71d960d702792412dd08f19c2de42c5a59006ead49b0a257",
+    "pdf": "img/sns-hue.pdf",
+    "png": "img/sns-hue.png",
+    "result_text": ""
+  },
+  {
+    "id": "sns-strip",
+    "title": "Посмотрим на отдельные поездки в категориях",
+    "kind": "plot",
+    "code": "np.random.seed(1514)\nsns.stripplot(data=trips,\n    x=\"bike\", y=\"minutes\", jitter=True)\nplt.xlabel(\"Велосипед\")\nplt.ylabel(\"Время, мин\")\nplt.xticks(rotation=15)\nplt.show()",
+    "code_sha256": "97585e01d22c9e4322bdd864e4de2970f92468acc1f0ad0b557b0e2cc361c67b",
+    "pdf": "img/sns-strip.pdf",
+    "png": "img/sns-strip.png",
+    "result_text": ""
+  },
+  {
+    "id": "pd-bar",
+    "title": "Series.plot: готовая выручка в виде столбцов",
+    "kind": "plot",
+    "code": "revenue_by_category.plot(\n    kind=\"bar\", rot=0\n)\nplt.xlabel(\"Категория\")\nplt.ylabel(\"Выручка, руб.\")\nplt.show()",
+    "code_sha256": "3c1a753a24e54822baa869e79c5d6679f5f418a2ba7a9b09763990c98360357f",
+    "pdf": "img/pd-bar.pdf",
+    "png": "img/pd-bar.png",
+    "result_text": ""
+  },
+  {
+    "id": "pd-hist",
+    "title": "Гистограмма столбца из другого CSV",
+    "kind": "plot",
+    "code": "weather = pd.read_csv(\n    DATA / \"weather.csv\"\n)\nweather[\"moscow\"].plot(\n    kind=\"hist\",\n    bins=[14, 16, 18, 20, 22, 24],\n    edgecolor=\"white\"\n)\nplt.xlabel(\"Температура, °C\")\nplt.ylabel(\"Число дней\")\nplt.show()",
+    "code_sha256": "f2898fe5633c77ac6579f7bf111bcd9ed5a7c4fbb3bb6beef94f3431a65afdab",
+    "pdf": "img/pd-hist.pdf",
+    "png": "img/pd-hist.png",
+    "result_text": ""
+  },
+  {
+    "id": "pd-scatter",
+    "title": "DataFrame.plot: явно выбираем два столбца",
+    "kind": "plot",
+    "code": "trips.plot(kind=\"scatter\",\n    x=\"distance_km\", y=\"minutes\",\n    alpha=0.7)\nplt.xlabel(\"Расстояние, км\")\nplt.ylabel(\"Время, мин\")\nplt.show()",
+    "code_sha256": "a554b9ecd086d512881651318c7dc370e5ec0e0c811dcc4861ab469bc94145ac",
+    "pdf": "img/pd-scatter.pdf",
+    "png": "img/pd-scatter.png",
+    "result_text": ""
+  },
+  {
+    "id": "pd-lines",
+    "title": "Несколько линий из столбцов таблицы",
+    "kind": "plot",
+    "code": "weather.plot(x=\"day\",\n    y=[\"moscow\", \"kazan\"], kind=\"line\")\nplt.xlabel(\"День\")\nplt.ylabel(\"Температура, °C\")\nplt.legend([\"Москва\", \"Казань\"])\nplt.show()",
+    "code_sha256": "6ebe5fcd4aa30f7b99b7577b709bc0323e592414a33f5987ba50b9672997491b",
+    "pdf": "img/pd-lines.pdf",
+    "png": "img/pd-lines.png",
+    "result_text": ""
+  },
+  {
+    "id": "export-table",
+    "title": "Сохраним таблицу и прочитаем обратно",
+    "kind": "table",
+    "code": "summary = revenue_by_category.reset_index(\n    name=\"revenue\"\n)\nsummary.to_csv(\n    OUTPUT / \"sales_summary.csv\",\n    index=False)\npd.read_csv(OUTPUT / \"sales_summary.csv\")",
+    "code_sha256": "f911a93467144b730c6b2a4d7ab416ed9ff6fb86d10f2f2e22522668d6e1dd35",
+    "pdf": "img/export-table.pdf",
+    "png": "img/export-table.png",
+    "result_text": "  category  revenue\n0   Бумага     1400\n1   Письмо      900"
+  },
+  {
+    "id": "save-figure",
+    "title": "Сохранение рисунка не меняет его смысл",
+    "kind": "plot",
+    "code": "revenue_by_category.plot(\n    kind=\"bar\", rot=0)\nplt.xlabel(\"Категория\")\nplt.ylabel(\"Выручка, руб.\")\nplt.savefig(OUTPUT / \"sales.png\", dpi=150,\n            bbox_inches=\"tight\")\nplt.show()",
+    "code_sha256": "99639c014f3d02459e8c9c2108c1dc13fce7e45ad2d9c13aac5738e66155ddf6",
+    "pdf": "img/save-figure.pdf",
+    "png": "img/save-figure.png",
+    "result_text": ""
+  },
+  {
+    "id": "two-axes",
+    "title": "Два вопроса на одном рисунке",
+    "kind": "plot",
+    "code": "fig, axes = plt.subplots(\n    1, 2, figsize=(5.5, 3.3),\n    layout=\"constrained\")\naxes[0].hist(trips[\"distance_km\"], bins=5)\naxes[0].set_xlabel(\"Км\")\naxes[0].set_ylabel(\"Число поездок\")\naxes[1].scatter(trips[\"distance_km\"],\n                trips[\"minutes\"], s=12)\naxes[1].set_xlabel(\"Км\")\naxes[1].set_ylabel(\"Минуты\")\nplt.show()",
+    "code_sha256": "0b189bb2b7acd67363a4bf3aebd852149d63aa849c3b285d952526005c279d82",
+    "pdf": "img/two-axes.pdf",
+    "png": "img/two-axes.png",
+    "result_text": ""
+  }
+]
